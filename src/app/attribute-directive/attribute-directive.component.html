@@ -1,0 +1,23 @@
+<button (click)="check = !check" class="btn btn-danger">Click</button>
+
+<div *ngIf="check">
+    <ul class="list-group">
+        <li class="list-group-item" 
+        [ngClass]="{oddNum:oddNum % 2 !== 0}"
+        [ngStyle]="{backgroundColor: oddNum % 2 !== 0? 'yellow':'gary'}"
+        *ngFor="let oddNum of oddNums">
+            {{oddNum}}
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="!check">
+    <ul class="list-group">
+        <li class="list-group-item" 
+        [ngClass]="{oddNum:evenNum % 2 !== 0}"
+        [ngStyle]="{backgroundColor: evenNum % 2 === 0? yellow:gary}"
+        *ngFor="let evenNum of evenNums">
+            {{evenNum}}
+        </li>
+    </ul>
+</div>

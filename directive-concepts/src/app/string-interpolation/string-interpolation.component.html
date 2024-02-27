@@ -1,0 +1,60 @@
+<p>string-interpolation works!</p>
+
+<p>{{stringVariable}}</p>
+
+<p>{{firstName + ' ' + lastName}}</p>
+
+
+<p>{{' First Name : ' + firstName + ' Last Name : ' + lastName}}</p>
+
+<p>{{' First Name : ' + firstName + 
+    ' Last Name : ' + lastName}}</p>
+
+<p>{{mathMark + socialMark}}</p>
+
+<p>{{'Total Marks :' + (mathMark + socialMark)}}</p>
+
+<p> {{'100+20-15*2 = ' + (100+20-15*2)}} </p>
+
+
+<p> 100+20-15*2 = {{100+20-15*2}} </p>
+
+
+<p>{{'Year Salary - ' + salary *12}}</p>
+
+
+<!-- This type Ts files available firstname is true so print firstName then not available false so enter defaltName -->
+<p>NAME : {{(firstName)? firstName:defaultName}}</p>
+
+<!-- this type interpolation assined the function  -->
+
+<p>{{ngOnInit()}}</p>
+
+
+<h4 style="color: green; text-decoration:underline;">This types is object how to find out the objects</h4>
+    <p>{{ngAfterContentChecked}}</p>
+     <p>{{persons}}</p>
+    <p>{{personVariable}}</p>
+
+<!-- object show an html page this method using -->
+
+<h1>Pipe method using in this below part    </h1>
+    <div *ngFor="let person of persons | keyvalue">
+        <p>{{person.key + ' - ' + person.value}}</p>
+        
+    </div>
+<h1>string interpolation using creaate image on imglink variable </h1>
+<img src="{{imgPath}}" alt="">
+
+<br><br>
+<h1>string interpolation using function tyep</h1>
+
+<p>{{getFullName()}}</p>
+
+<h1> disable button using string interpolation</h1>
+<button class="btn  btn-success" disabled = '{{isDisable}}'>button</button>
+
+<h1>there is using property binding</h1>
+<button class="btn  btn-success" [disabled] = isDisable>button</button>
+
+

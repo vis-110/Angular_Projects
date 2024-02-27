@@ -1,0 +1,8 @@
+<h5>Active Permission</h5>
+
+<ul class="list-group">
+    <li class="list-group-item" 
+     *ngFor="let data of firstSetUp;let i=index "
+     (click)= "clickActivesection(i)"
+     >{{data}}</li>
+</ul>

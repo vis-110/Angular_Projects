@@ -1,0 +1,60 @@
+<!-- <button class="btn btn-success"  (click)="primary1()">primay1</button>
+
+<button class="btn btn-danger" (click)="primary2()">primay1</button> -->
+<!-- 
+
+ <app-primary1 *ngIf="primary1Result;then thenPart else elsePart" [ngClass]="" >This sentence not show</app-primary1>
+
+<app-primary2 *ngIf="primary2Result;then thenPart2 else elsePart2" [ngClass]="">This sentence not show</app-primary2>
+
+<ng-template #thenPart>
+    This is primay1 component using ngclass method
+</ng-template>
+
+<ng-template #thenPart2>
+    This is primay2 component using ngclass method
+</ng-template>
+
+
+
+<ng-template #elsePart>
+    The primary1 is ts file false
+</ng-template>
+
+<ng-template #elsePart2>
+    The primary2 is ts file false
+</ng-template>
+
+
+<input type="checkbox" [(ngModel)]="primary1Result"  name="" id="">
+<p *ngIf="primary1Result">Check box clicked</p> -->
+
+<!-- <ng-container *ngIf="{odd:true}"> --> 
+ <!-- <app-primary1 *ngFor="let arrays of array;let o=odd; let e=even;"
+    [ngClass]="{'bg-danger':o,'bg-success':e}"></app-primary1> -->
+ <!-- </ng-container> -->
+<!-- <app-primary2 *ngFor="let arrays of array"></app-primary2> -->
+
+<!-- <p *ngFor="let arrays of array;let o=odd; let e=even;"
+[ngClass]="{'bg-danger':o,'bg-success':e}">jkdfjdklfj</p> -->
+
+<!-- <app-primary1 ></app-primary1>
+
+<app-primary2></app-primary2>-->
+
+
+<div *ngFor="let arrays of array">
+    <app-primary1 *ngIf="arrays%2==0" [ngStyle]="{backgroundColor:'yellow'}"> </app-primary1> 
+    
+     <app-primary2 *ngIf="arrays%2==1"></app-primary2>
+</div>
+
+<table>
+    <tbody>
+        <tr *ngFor="let vis of vishnu">
+            <ng-container *ngIf="vis.name == 'balakumaran'">
+                <td> {{vis.name}} </td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+thead{
+    background-color: blanchedalmond;
+}
+
+td{
+    background-color:bisque;
+}
+
+th{
+    background-color: cadetblue;
+}
+
+input{
+    vertical-align: baseline;
+}

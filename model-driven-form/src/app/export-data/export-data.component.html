@@ -1,0 +1,37 @@
+<div class="w-50 mx-auto border border-info border-3 px-5">
+    <div class="text-center fs-4 pt-2">
+        Export Data
+    </div>
+    <div class="my-4 text-end">
+        <button class="btn btn-success" (click)="ClearExportData()">Reset</button>
+    </div>
+
+    <table class="table ">
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th class="ThBgColor" scope="col">S.No</th>
+                <th class="ThBgColor" scope="col">FirstName</th>
+                <th class="ThBgColor" scope="col">LastName</th>
+                <th class="ThBgColor" scope="col">Email</th>
+                <th class="ThBgColor" scope="col">Date Of Birth</th>
+                <th class="ThBgColor" scope="col">PhoneNumber</th>
+                <th class="ThBgColor" scope="col">Gender</th>
+                <th class="ThBgColor" scope="col">City</th>
+                <th class="ThBgColor" scope="col">Profile</th>
+            </tr>
+        </thead>
+        <tbody class="table-secondary">
+            <tr *ngFor="let item of ExportArray; let i = index">
+                <th class="TdBgColor" scope="row">{{i}}</th>
+                <td class="TdBgColor">{{item.firstname}}</td>
+                <td class="TdBgColor">{{item.lastname}}</td>
+                <td class="TdBgColor">{{item.email}}</td>
+                <td class="TdBgColor">{{item.dob}}</td>
+                <td class="TdBgColor">{{item.phonenumber}}</td>
+                <td class="TdBgColor">{{item.gender}}</td>
+                <td class="TdBgColor">{{item.cityName}}</td>
+                <td class="TdBgColor"> <img [width]="100" [height]="70" [src]="item.fileupload"> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,9 @@
+<p>services using child2</p>
+
+<input type="text" #box ><button class="btn btn-success" (click)="childComAddName(box.value); box.value">Add Name</button>
+<div class="m-5">
+    <button (click)="getInfodetainsfun2()" >First Info</button>
+    <ol>
+        <li *ngFor="let list of getInfodetains2">{{list}}</li>
+    </ol>
+</div>

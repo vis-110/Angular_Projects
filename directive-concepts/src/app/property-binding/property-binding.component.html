@@ -1,0 +1,24 @@
+<p>property-binding works!</p>
+
+<img src="{{imgPath}}" alt="">
+
+<P>This are property binding</P>
+<p [innerHTML]="inserData"></p>
+
+<p>This are property binding another name- CANONICAL</p>
+<p bind-innerHTML="inserData"></p>
+
+
+<!-- string interpolation are not neglate this string didto-->
+<h1>{{htmlString}}</h1>
+
+<p>property binding using this script tag age remove properly handle only</p>
+<h1 [innerHTML]="htmlString"></h1>
+
+<table>
+    <th>
+        <tr>
+            <td></td>
+        </tr>
+    </th>
+</table>

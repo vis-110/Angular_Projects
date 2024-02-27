@@ -1,0 +1,53 @@
+<app-header (componentSelect)="recipeChoose($event)"></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="selectCom === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="selectCom !== 'recipe'"></app-shopping-list>
+    </div>
+  </div>
+</div>
+
+
+<!-- <app-attribute-directive></app-attribute-directive>
+
+basic-directie using create the elemet bg color this method not using someplace not working
+<p attributeDirective >This pare using @Directive using create bg color there are Basic-directive</p>
+
+better-directive using create the elemnt bg color This method using good
+
+<p appBetterAttributDirective >@Directive are better directive using this method run proberly</p>
+
+
+<table>
+  <th attr.colspan="{{colspanVar}}">
+    <tr>
+      <td >Market Details</td>
+    </tr>
+  </th>
+  <tbody>
+    <tr>
+      <td>biscuts</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>tomoto</td>
+      <td>1020</td>
+    </tr>
+  </tbody>
+</table>
+
+  <h1 style="color:green">GeeksforGeeks</h1>
+  <button value="open">open</button>
+
+  <button aria-label="opens a new window" 
+          value="open"> open </button>
+
+          <div>
+
+            <span [style.font-size.px]="isTrue? 20 : 24">This style binding is set for true value</span>
+
+            <span [style.font-size.px]="isTrue ? 120 : 30">This style binding is set for false value</span>
+
+            </div> -->

@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-5">
+        <app-recipe-list (itemParentToPass) = "selectRecipe = $event" ></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <app-recipe-detail *ngIf="selectRecipe; else infotext;" [recipe] = "selectRecipe" ></app-recipe-detail>
+        <ng-template #infotext>
+            <p>Please select a Recipe!</p>
+        </ng-template>
+    </div>
+</div>

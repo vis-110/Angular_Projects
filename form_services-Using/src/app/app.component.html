@@ -1,0 +1,7 @@
+<!-- <app-form-component></app-form-component> -->
+<div *ngIf="isFormEnable">
+    <app-form-second-model (submitaction)="getonSubmit($event)"></app-form-second-model>
+</div>
+<div *ngIf="!isFormEnable">
+    <app-table-component (formenable)="getonSubmit($event)"></app-table-component> 
+</div>

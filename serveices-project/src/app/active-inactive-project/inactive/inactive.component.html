@@ -1,0 +1,8 @@
+<h5>Inactive Permission</h5>
+
+<ul class="list-group">
+    <li class="list-group-item" 
+     *ngFor="let data of secondSetUp;let i=index "
+     (click)= "clickInactivesection(i)"
+     >{{data}}</li>
+</ul>

@@ -1,0 +1,151 @@
+<p>form-second-model works!</p>
+
+
+<div class="col-lg-4 mx-auto">
+    <div class="container">
+        <div class="card ">
+            <div class="card-header text-center">Angular From validation</div>
+            <div class="card-body ">
+                <form name="form" #userData="ngForm" (ngSubmit)="userData.valid && submit(userData.value)" novalidate>
+
+                    <div class="from-group mb-4 col-lg-10 mx-auto">
+                        <label for="name" class="mb-2">Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter the name" #name
+                            [(ngModel)]="fromData.name" #Name="ngModel"
+                            [ngClass]="{'is-invalid':userData.submitted && Name.invalid}" required>
+                        <div class="invalid-feedback">
+                            <div>Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="from-group mb-4 col-lg-10 mx-auto">
+                        <label for="name" class="mb-2">Gender</label>
+                        <div class="container row">
+                            <div class="form-check col-lg-4">
+                                <input class="form-check-input" type="radio" name="gender" value="Male"
+                                    #gender="ngModel" [(ngModel)]="fromData.gender">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Male
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-4">
+                                <input class="form-check-input" type="radio" name="gender" value="Femail"
+                                    id="flexRadioDefault2" #gender="ngModel" [(ngModel)]="fromData.gender">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Femail
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-4">
+                                <input class="form-check-input" type="radio" name="gender" value="Others"
+                                    id="flexRadioDefault2" #gender="ngModel" [(ngModel)]="fromData.gender">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Others
+                                </label>
+                            </div>
+                            <div class="invalid-feedback">
+                                <p *ngIf="gender.valid && gender.touched">Food is required</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="from-group mb-4 col-lg-10 mx-auto">
+                        <label for="email" class="mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter the Email"
+                            #Email="ngModel" [ngClass]="{'is-invalid':userData.submitted && Email.invalid}" email
+                            [(ngModel)]="fromData.email" required>
+                        <div class="invalid-feedback">
+                            <div>Email is required</div>
+                        </div>
+                    </div>
+
+                    <div class="row col-lg-11 mx-auto">
+                        <div class="from-group mb-4 col-lg-6 mx-auto">
+                            <label for="phoneNumber" class="mb-2">Date</label>
+                            <input type="date" id="date" name="date" class="form-control"
+                                placeholder="Enter the phone number" [(ngModel)]="fromData.date" #date="ngModel"
+                                [ngClass]="{'is-invalid':userData.submitted && date.invalid}" pattern="" required>
+
+                            <div class="invalid-feedback">
+                                <div>Select date </div>
+                            </div>
+                        </div>
+
+                        <div class="from-group mb-4 col-lg-6 mx-auto">
+                            <label for="phoneNumber" class="mb-2">Dropdown</label>
+                            <select name="" id="" class="form-control" name="dropdown" #dropdown="ngModel"
+                                [ngClass]="{'is-invalid':userData.submitted && dropdown.invalid}"
+                                [(ngModel)]="fromData.dropdown" required>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Madurai">Madurai</option>
+                                <option value="Selam">Selam</option>
+                                <option value="Trichy">Trichy</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <div>Select City</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="from-group mb-4 col-lg-10 mx-auto">
+                        <label for="phoneNumber" class="mb-2">Phone Number</label>
+                        <input type="number" name="phoneNumber" id="phoneNumber" class="form-control"
+                            placeholder="Enter the phone number" #PhoNo="ngModel" [(ngModel)]="fromData.phoneNumber"
+                            [ngClass]="{'is-invalid':userData.submitted && PhoNo.invalid}" required>
+                        <div class="invalid-feedback">
+                            <div>Phone number is required</div>
+                        </div>
+                    </div>
+
+                    <div class="from-group mb-4 col-lg-10 mx-auto">
+                        <label for="name" class="mb-2" required>favourite </label>
+                        <div class="row container">
+                            <div class="form-check col-lg-4">
+                                <input class="form-check-input" type="checkbox" value="Idly" name="favourite" ngModel
+                                    (change)=" getFavFood($event)" [checked]="" required>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Idly
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-4">
+                                <input class="form-check-input" type="checkbox" value="Dhosa" name="favourite" ngModel
+                                    (change)=" getFavFood($event)" required>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Dhosa
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-4">
+                                <input class="form-check-input" type="checkbox" value="Poori" name="favourite" ngModel
+                                    (change)=" getFavFood($event)" required>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Poori
+                                </label>
+                            </div>
+                        </div>
+                        <div class="invalid-feedback">
+                            <p>Select Food</p>
+                        </div>
+                    </div>
+
+                    <div class="from-group mb-4 col-lg-10 mx-auto">
+                        <label for="message" class="mb-2">Message</label>
+                        <textarea name="message" class="form-control" id="message" rows="3" ngModel name="message"
+                            ngModel #message="ngModel" [ngClass]="{'is-invalid':userData.submitted && message.invalid}"
+                            required></textarea>
+                        <div class="invalid-feedback">
+                            <div>Any Commends</div>
+
+                        </div>
+                    </div>
+
+                    <div class="from-group mb-4 col-lg-10 mx-auto">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" type="submit">Button</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

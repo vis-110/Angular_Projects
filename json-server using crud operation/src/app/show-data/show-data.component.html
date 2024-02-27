@@ -1,0 +1,33 @@
+<table class="table my-5">
+    <thead class="table-warning">
+        <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Country</th>
+            <th scope="col">Domains</th>
+            <th scope="col">Web_pages</th>
+            <th scope="col">Alpha_two_code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody class="table-info">
+        <tr *ngFor="let list of formArray; let i = index">
+            <th class="Tabeetd">{{list.id}}</th>
+            <td>{{list.firstname}}</td>
+            <td>{{list.lastname}}</td>
+            <td>{{list.email}}</td>
+            <td>{{list.phonenumber}}</td>
+            <td>{{list.date}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="updateData(list.id,list)">Edit</button>
+                <!-- [routerLink]="['tableEdit',i]"  -->
+            </td>
+            <td>
+                <button class="btn  btn-danger" (click)="DeletedData(list)">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+

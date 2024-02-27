@@ -1,0 +1,21 @@
+<p>class-binding works!</p>
+<div style="font-size: 20px;">
+
+    <button class="letterColor">button</button>
+    <br> <br>
+
+    <button class="letterColor" [class] = "styleCol">button</button>
+    <br> <br>
+    <button class="letterColor" [class.letterColor] = "!corRoung">button</button>
+    <br> <br>
+    <button class="letterColor boldLetter letterStyle" [class.letterColor] = "!corRoung">button</button>
+    <br> <br>
+
+    <button class="letterColor" [style.fontWeight] = "corRoung? 'bold':'normal'">button</button>
+    <br> <br>
+
+    <button class="letterColor" [style.font-size.px] = "fontSize">button</button>
+    <br><br>
+    <button class="letterColor" [ngStyle] = "addStyle()">button</button>
+
+</div>

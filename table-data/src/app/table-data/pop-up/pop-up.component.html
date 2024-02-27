@@ -1,0 +1,20 @@
+    <div id="PopModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title mx-auto">Car Details</h4>
+        </div>
+        <div class="modal-body ">
+          <p >{{'CarColor - '}}{{popValue.color}}</p>
+          <p>{{'CarType - '}}{{popValue.type}}</p>
+          <p>{{'CarRegistration - '}}{{popValue.registration}}</p>
+          <p>{{'CarCapasity - '}}{{popValue.capacity}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-default"  (click)="outButtonClose()" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- <button (click)="parentValue()"> click</button> -->

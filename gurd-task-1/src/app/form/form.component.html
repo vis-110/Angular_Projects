@@ -1,0 +1,91 @@
+<div class="col-lg-5 mx-auto">
+    <div class="card">
+        <div class="card-header py-3 text-center text-muted ">
+            form Validation
+        </div>
+        <div class="card-body mx-3">
+            <form class="form-horizontal" [formGroup]="formDetails" (ngSubmit)="tableSubmit()">
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4 ">First Name</label>
+                    <input type="text" class=" col-lg-7" formControlName="firstname">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Last Name</label>
+                    <input type="text" class=" col-lg-7" formControlName="lastname">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Email</label>
+                    <input type="email" class=" col-lg-7" formControlName="email">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Date Of Birth</label>
+                    <input type="date" class=" col-lg-7" formControlName="dob">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Phone Number</label>
+                    <input type="number" class=" col-lg-7" formControlName="phonenumber">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Gender</label>
+                    <div class="col-lg-8 d-inline form-check">
+                        <label for="male" class="radio-inline form-check-lable me-5"><input class="form-check-input"
+                                id="male" type="radio" name="gender" formControlName="gender" value="Male"> Male
+                        </label>
+                        <label for="female" class="radio-inline form-check-lable me-5"><input class="form-check-input"
+                                id="female" type="radio" name="gender" formControlName="gender" value="Female"> Female
+                        </label>
+                        <label for="other" class="radio-inline form-check-lable me-5"><input class="form-check-input"
+                                id="other" type="radio" name="gender" formControlName="gender" value="Other"> Other
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Password</label>
+                    <input type="password" class=" col-lg-7" formControlName="password">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Confirm Password</label>
+                    <input type="password" class=" col-lg-7" formControlName="conformpassword">
+                </div>
+
+                <label for="" class=" col-lg-4">City</label>
+                <select class="custom-select mb-3 col-lg-7" formControlName="cityName">
+                    <!-- <option id="">Chennai</option>
+                    <option id="">Tricy</option>
+                    <option id="">Madurai</option>
+                    <option id="">Tirunelveli</option>
+                    <option id="">Tenkasi</option> -->
+                    <option *ngFor="let city of City" (change)="changeCity($event)" [ngValue]="city">
+                        {{ city }}
+                    </option>
+                </select>
+
+                <div class="form-group my-5">
+                    <label for="file" class="form-label col-lg-4">File Upload</label>
+                    <input type="file" accept="image/*" id="file" class="form-input col-lg-7"
+                        (change)="imgfileUpload($event)" formControlName="fileupload">
+                </div>
+
+                <div class="form-group my-5">
+
+                    <label for="condition" class="form-check-lable"> <input type="checkbox" id="condition"
+                            class="form-check-input me-3" formControlName="termcon"> Terms
+                        and Condition </label>
+                </div>
+
+                <div class="form-group d-grid mb-5">
+                    <button type="submit"  class="btn btn-primary btn-block"
+                        [disabled]="!formDetails.valid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

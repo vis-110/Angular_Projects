@@ -1,0 +1,204 @@
+<!-- <div class="col-lg-5 mx-auto" *ngIf="formDiv">
+    <div class="card">
+        <div class="card-header py-3 text-center text-muted ">
+            form Validation
+        </div>
+        <div class="card-body mx-3">
+            <form class="form-horizontal" [formGroup]="formDetails" (ngSubmit)="tableSubmit()">
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4 ">First Name</label>
+                    <input type="text" class=" col-lg-7" formControlName="firstname">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Last Name</label>
+                    <input type="text" class=" col-lg-7" formControlName="lastname">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Email</label>
+                    <input type="email" class=" col-lg-7" formControlName="email">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Date Of Birth</label>
+                    <input type="date" class=" col-lg-7" formControlName="dob">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Phone Number</label>
+                    <input type="number" class=" col-lg-7" formControlName="phonenumber">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Gender</label>
+                    <div class="col-lg-8 d-inline form-check">
+                        <label for="male" class="radio-inline form-check-lable me-5"><input class="form-check-input"
+                                id="male" type="radio" name="gender" formControlName="gender" value="Male"> Male
+                        </label>
+                        <label for="female" class="radio-inline form-check-lable me-5"><input class="form-check-input"
+                                id="female" type="radio" name="gender" formControlName="gender" value="Female"> Female
+                        </label>
+                        <label for="other" class="radio-inline form-check-lable me-5"><input class="form-check-input"
+                                id="other" type="radio" name="gender" formControlName="gender" value="Other"> Other
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Password</label>
+                    <input type="password" class=" col-lg-7" formControlName="password">
+                </div>
+
+                <div class="form-group my-5">
+                    <label for="" class=" col-lg-4">Confirm Password</label>
+                    <input type="password" class=" col-lg-7" formControlName="conformpassword">
+                </div>
+
+                <label for="" class=" col-lg-4">City</label>
+                <select class="custom-select mb-3 col-lg-7" formControlName="cityName">
+                     <option id="">Chennai</option>
+                    <option id="">Tricy</option>
+                    <option id="">Madurai</option>
+                    <option id="">Tirunelveli</option>
+                    <option id="">Tenkasi</option>
+                    <option *ngFor="let city of City" (change)="changeCity($event)" [ngValue]="city">
+                        {{ city }}
+                    </option>
+                </select>
+
+                <div class="form-group my-5">
+                    <label for="file" class="form-label col-lg-4">File Upload</label>
+                    <input type="file" accept="image/*" id="file" class="form-input col-lg-7"
+                        (change)="imgfileUpload($event)" formControlName="fileupload">
+                </div>
+
+                <div class="form-group my-5">
+
+                    <label for="condition" class="form-check-lable"> <input type="checkbox" id="condition"
+                            class="form-check-input me-3" formControlName="termcon"> Terms
+                        and Condition </label>
+                </div>
+
+                <div class="form-group d-grid mb-5">
+                    <button type="submit" class="btn btn-primary btn-block"
+                        [disabled]="!formDetails.valid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="tableDiv">
+    <div class="m-5 testingData">
+        <button class="btn btn-success me-5" (click)="addNewRecord()">Add New Record</button>
+        <button class="btn btn-success me-5" (click)="ExportDataButton()">Export</button>
+        <button class="btn btn-success " (click)="ClearExportData()">Clear Export Data</button>
+    </div>
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">PhoneNumber</th>
+                <th scope="col">Gender</th>
+                <th scope="col">City</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Export</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of formArray; let i = index">
+                <th class="Tabeetd" scope="row">{{i}}</th>
+                <td>{{item.firstname}}</td>
+                <td>{{item.lastname}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.dob}}</td>
+                <td>{{item.phonenumber}}</td>
+                <td>{{item.gender}}</td>
+                <td>{{item.cityName}}</td>
+                <td> <img [width]="100" [height]="70" [src]="item.fileupload"> </td>
+                <td><button class="btn  text-primary" (click)="updateData(item,i)"><i class="bi bi-pen"></i></button>
+                </td>
+                <td>
+                    <button class="btn  btn text-danger" (click)="deleteRecord(i)"> <i class="bi bi-trash"></i></button>
+                </td>
+                <td>
+                    <input type="checkbox" class="form-check-input"
+                        (change)="ExportDataCheckBox($event,i)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->
+<!-- 
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="ThBgColor" scope="col">S.No</th>
+                <th class="ThBgColor" scope="col">FirstName</th>
+                <th class="ThBgColor" scope="col">LastName</th>
+                <th class="ThBgColor" scope="col">Email</th>
+                <th class="ThBgColor" scope="col">Date Of Birth</th>
+                <th class="ThBgColor" scope="col">PhoneNumber</th>
+                <th class="ThBgColor" scope="col">Gender</th>
+                <th class="ThBgColor" scope="col">City</th>
+                <th class="ThBgColor" scope="col">Profile</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of ExportArray; let i = index">
+                <th class="TdBgColor" scope="row">{{i}}</th>
+                <td class="TdBgColor">{{item.firstname}}</td>
+                <td class="TdBgColor">{{item.lastname}}</td>
+                <td class="TdBgColor">{{item.email}}</td>
+                <td class="TdBgColor">{{item.dob}}</td>
+                <td class="TdBgColor">{{item.phonenumber}}</td>
+                <td class="TdBgColor">{{item.gender}}</td>
+                <td class="TdBgColor">{{item.cityName}}</td>
+                <td class="TdBgColor"> <img [width]="100" [height]="70" [src]="item.fileupload"> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>  -->
+
+
+<div>
+<router-outlet></router-outlet>
+
+</div>
+
+<!-- 
+<a [routerLink]="['home', 10,'maha']">the link click1</a>
+
+<a [routerLink]="['home', 11,'vis']">the link click2</a>
+
+
+<a [routerLink]="['home', 12,'kar']">the link click3</a> -->
+
+
+<!-- <app-checkbox-table></app-checkbox-table> -->
+
+
+<!-- <div *ngIf="hiddenShowForm">
+    <app-form-data (submitaction)="getonSubmitForm($event)" ></app-form-data>
+</div>
+
+
+<div *ngIf="hiddenShowTable">
+<app-add-new-record (addNewRecord)="getontable($event)"></app-add-new-record>
+
+<app-table-data></app-table-data>
+
+<app-export-data></app-export-data>
+
+</div> -->
+
+

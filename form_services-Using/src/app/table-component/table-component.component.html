@@ -1,0 +1,41 @@
+<!-- <div *ngIf="tableHide"> -->
+
+<!-- <div class="text-end">
+  <button class="btn btn-success" (click)="hideTable()">Add New User</button>
+</div> -->
+
+<button type="button" (click)="addRecord()">Add New Record</button>
+<div class="col-lg-10 mx-auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date</th>
+        <th scope="col">Dropdown</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Feviorite Food</th>
+        <th scope="col">Command</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let getData of submitValue; let i = index">
+        <td>{{i}}</td>
+        <td>{{getData.name}}</td>
+        <td>{{getData.gender}}</td>
+        <td>{{getData.email}}</td>
+        <td>{{getData.date}}</td>
+        <td>{{getData.dropdown}}</td>
+        <td>{{getData.phoneNumber}}</td>
+        <td>
+        {{getData.favourite}}
+        </td>
+        <td>{{getData.message}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- </div> -->

@@ -1,0 +1,61 @@
+<div class="w-75 mx-auto px-5 border border-success border-3 table-data">
+    <div class="text-center fs-4 pt-2">
+        Student Details
+    </div>
+    <div class="text-end">
+        <div class="my-4">
+            <button class="btn btn-success" (click)="addNewRecord()">Add New Record</button>
+        </div>
+
+        <div>
+            <button class="btn btn-success" (click)="ExportDataButton()">Export Record</button>
+        </div>
+
+    </div>
+    <table class="table my-4">
+        <thead class="table-warning">
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">PhoneNumber</th>
+                <th scope="col">Gender</th>
+                <th scope="col">City</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Export</th>
+            </tr>
+        </thead>
+        <tbody class="table-info">
+            <tr *ngFor="let list of formArray; let i = index">
+                <th class="Tabeetd" scope="row">{{i+1}}</th>
+                <td>{{list.firstname}}</td>
+                <td>{{list.lastname}}</td>
+                <td>{{list.email}}</td>
+                <td>{{list.dob}}</td>
+                <td>{{list.phonenumber}}</td>
+                <td>{{list.gender}}</td>
+                <td>{{list.cityName}}</td>
+                <td> <img [width]="100" [height]="70" [src]="list.fileupload"> </td>
+                <td><button class="btn  text-primary" (click)="editFormData(i)"><i class="bi bi-pen"></i></button>
+                    <!-- [routerLink]="['tableEdit',i]"  -->
+                </td>
+                <td>
+                    <button class="btn  btn text-danger" (click)="deleteRecord(i)"> <i class="bi bi-trash"></i></button>
+                </td>
+                <td>
+                    <input type="checkbox" class="form-check-input" [(ngModel)] = "list.isChecked" (change)="ExportDataCheckBox($event,list,i)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<div class="export-box">
+    <router-outlet></router-outlet>
+</div>

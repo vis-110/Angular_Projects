@@ -1,0 +1,17 @@
+<p>The page are successful running</p>
+
+<h5>'the status get in id {{successId}} and status {{sucessStatus}} and function Output {{getStatusResult}} </h5>
+
+
+<button class="btn btn-primary"
+        [disabled] = "!disableTime"
+        (click) = "onFindit()" >button</button>
+<!-- <h3 [innerText]="disableTime">jklj</h3> -->
+<!-- <h1> {{onFinditvariable}} </h1> -->
+<!-- do not mix property binding string interpolation -->
+
+<!-- <input type="text" class="form-control" (input)="inputValueFind($event)" > -->
+
+<input type="text" class="form-control" [(ngModel)]="inputValue">
+
+<p *ngIf="ngIfUsing">server is created {{inputValue}} </p>

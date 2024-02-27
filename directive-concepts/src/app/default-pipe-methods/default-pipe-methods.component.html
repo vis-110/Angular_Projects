@@ -1,0 +1,42 @@
+
+
+
+<p>default-pipe-methods works!</p>
+
+
+date pipe mehod 
+
+<p>{{dates}}</p>
+<p>{{dates | date  }}</p>
+<p>{{dates | date : 'dd/MM/yyy' }}</p>
+
+
+<p>{{dates | date : 'short'  }}</p>
+<p>{{dates | date : 'medium'  }}</p>
+<p>{{dates | date : 'long'  }}</p>
+
+Date only 
+
+<p>{{dates | date : 'shortDate'  }}</p>
+<p>{{dates | date : 'mediumDate'  }}</p>
+<p>{{dates | date : 'longDate'  }}</p>
+
+Time only
+<p>{{dates | date : 'shortTime'  }}</p>
+<p>{{dates | date : 'mediumTime'  }}</p>
+<p>{{dates | date : 'longTime'  }}</p>
+
+
+
+month using capital M only small m is error
+
+<h4>{{dates | date : "MMM dd, y"}}</h4>
+<h4>{{dates | date : "MM dd, yy"}}</h4>
+<h4>{{dates | date : "M - dd - yyyy"}}</h4>
+
+
+upper and lower case
+
+<h4>{{letters | lowercase}}</h4>
+
+<h4>{{letters | uppercase}}</h4>

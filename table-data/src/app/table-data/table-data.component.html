@@ -1,0 +1,56 @@
+<table class="table table-bordered">
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Select</th>
+      <th scope="col">Car Color</th>
+      <th scope="col">Type</th>
+      <th scope="col">Registration</th>
+      <th scope="col">Capacity</th>
+      <th scope="col">Booking</th>
+      <th scope="col">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let carDetails of cars; let i = index;" class="text-center">
+      <td scope="row">
+        <input type="checkbox" (click)="checkBoxClicked(i) ">
+      </td>
+      <td>{{carDetails.color}}</td>
+      <td>{{carDetails.type}}</td>
+      <td>{{carDetails.registration | date:"MMM dd, yyyy 'at' hh:mm a"}}</td>
+      <td>{{carDetails.capacity}}</td>
+      <td>
+        <button type="button" class="btn btn-success" [disabled]="cars[i].isEnabled"
+          (click)="getRowValue(i,carDetails)">Choose</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="deleteFunction(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- popup Modal -->
+
+<!-- <div id="PopModal" class="modal " role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content boxshadow">
+        <div class="modal-header">
+          <h4 class="modal-title mx-auto">Car Details</h4>
+        </div>
+        <div class="modal-body ">
+          <p>{{'CarColor - '}}{{ colorVar}}</p>
+          <p>{{'CarType - '}}{{ typeVar}}</p>
+          <p>{{'CarRegistration - '}}{{registrationVar | date:"MMM dd, yyyy 'at' hh:mm a" }}</p>
+          <p>{{'CarCapasity - '}}{{capacityVar}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-default" (click)="outButtonClose()" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div> -->
+
+<app-pop-up [popValue]="getDatailsValue" ></app-pop-up>
